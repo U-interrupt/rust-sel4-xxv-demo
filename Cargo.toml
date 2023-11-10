@@ -1,0 +1,26 @@
+[package]
+name = "xxv-demo"
+version = "0.1.0"
+authors = ["gallium70"]
+edition = "2021"
+license = "BSD-2-Clause"
+
+[dependencies]
+sel4 = { path = "../rust-sel4/crates/sel4" }
+sel4-root-task = { path = "../rust-sel4/crates/sel4-root-task" }
+sel4-logging = { path = "../rust-sel4/crates/sel4-logging" }
+xxv-pac = { path = "xxv-pac" }
+axidma-pac = { path = "axidma-pac" }
+riscv = { git = "https://github.com/duskmoon314/riscv.git", branch = "extN", features = [
+    "inline-asm",
+] }
+spin = "0.9"
+lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
+rv-plic = { git = "https://github.com/duskmoon314/rv-plic" }
+array-init = "2.0.0"
+buddy_system_allocator = "0.8.0"
+
+[features]
+default = ["board_lrv"]
+board_lrv = []
+board_qemu = []

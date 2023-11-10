@@ -1,0 +1,11 @@
+[unstable]
+unstable-options = true
+build-std = ["core", "alloc", "compiler_builtins"]
+build-std-features = ["compiler-builtins-mem"]
+
+[env]
+RUST_TARGET_PATH = { value = "support/targets", relative = true }
+
+[build]
+target = "riscv64imac-sel4"
+target-dir = "build/target"
